@@ -16,8 +16,8 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Main.Name = "Main"
 Main.Parent = ScreenGui
 Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Main.Position = UDim2.new(0.347442627, 0, 0.330854982, 0)
-Main.Size = UDim2.new(0.305114597, 0, 0.338290006, 0)
+Main.Position = UDim2.new(0.296854436, 0, 0.267901003, 0)
+Main.Size = UDim2.new(0.404590487, 0, 0.463163286, 0)
 Main.ZIndex = 3
 Main.Style = Enum.FrameStyle.ChatBlue
 
@@ -39,8 +39,8 @@ Active.Name = "Active"
 Active.Parent = Main
 Active.BackgroundColor3 = Color3.fromRGB(77, 255, 0)
 Active.BorderSizePixel = 0
-Active.Position = UDim2.new(0.144344196, 0, 0.423246086, 0)
-Active.Size = UDim2.new(0.713609159, 0, 0.393205583, 0)
+Active.Position = UDim2.new(0.144577175, 0, 0.371046513, 0)
+Active.Size = UDim2.new(0.705960512, 0, 0.361127108, 0)
 Active.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
 Active.Font = Enum.Font.Gotham
 Active.Text = "Active"
@@ -56,7 +56,7 @@ end)
 
 -- Scripts:
 
-local function CUXCGYR_fake_script() -- ScreenGui.Script 
+local function CAMB_fake_script() -- ScreenGui.Script 
 	local script = Instance.new('Script', ScreenGui)
 
 	Main = script.Parent.Main
@@ -64,4 +64,4 @@ local function CUXCGYR_fake_script() -- ScreenGui.Script
 	Main.Active = true
 	Main.Selectable = true
 end
-coroutine.wrap(CUXCGYR_fake_script)()
+coroutine.wrap(CAMB_fake_script)()
