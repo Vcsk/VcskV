@@ -68,7 +68,7 @@ Speed.TextColor3 = Color3.fromRGB(0, 255, 42)
 Speed.TextScaled = true
 Speed.TextSize = 14.000
 Speed.TextWrapped = true
-Active.MouseButton1Down:Connect(function()
+Speed.MouseButton1Down:Connect(function()
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 23.3
 end)
 
