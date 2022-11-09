@@ -7,6 +7,7 @@ local ScreenGui = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
 local Active = Instance.new("TextButton")
+local Speed = Instance.new("TextButton")
 
 --Properties:
 
@@ -52,12 +53,28 @@ Active.MouseButton1Down:Connect(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/JNHHGaming/JN-HH-Gaming-Pro/main/JN%20HH%20Gaming%20Pro",true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
-Main.Visible = false
+end)
+
+Speed.Name = "Speed"
+Speed.Parent = Main
+Speed.BackgroundColor3 = Color3.fromRGB(77, 255, 0)
+Speed.BorderSizePixel = 0
+Speed.Position = UDim2.new(0.191984653, 0, 0.751546621, 0)
+Speed.Size = UDim2.new(0.604438543, 0, 0.250776947, 0)
+Speed.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+Speed.Font = Enum.Font.Gotham
+Speed.Text = "Click to Activate Speed(23.3)"
+Speed.TextColor3 = Color3.fromRGB(0, 255, 42)
+Speed.TextScaled = true
+Speed.TextSize = 14.000
+Speed.TextWrapped = true
+Active.MouseButton1Down:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 23.3
 end)
 
 -- Scripts:
 
-local function GPAQG_fake_script() -- ScreenGui.Script 
+local function IHCIZ_fake_script() -- ScreenGui.Script 
 	local script = Instance.new('Script', ScreenGui)
 
 	Main = script.Parent.Main
@@ -65,4 +82,4 @@ local function GPAQG_fake_script() -- ScreenGui.Script
 	Main.Active = true
 	Main.Selectable = true
 end
-coroutine.wrap(GPAQG_fake_script)()
+coroutine.wrap(IHCIZ_fake_script)()
