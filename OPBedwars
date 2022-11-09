@@ -1,0 +1,67 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Active = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.Position = UDim2.new(0.379188657, 0, 0.330855012, 0)
+Main.Size = UDim2.new(0.240740716, 0, 0.338290006, 0)
+Main.ZIndex = 3
+Main.Style = Enum.FrameStyle.ChatBlue
+
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(-0.0620499924, 0, -0.116150223, 0)
+Title.Size = UDim2.new(1.13216949, 0, 0.150205791, 0)
+Title.Font = Enum.Font.FredokaOne
+Title.Text = "OP BEDWARS SCRIPT"
+Title.TextColor3 = Color3.fromRGB(255, 0, 0)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+Active.Name = "Active"
+Active.Parent = Main
+Active.BackgroundColor3 = Color3.fromRGB(77, 255, 0)
+Active.BorderSizePixel = 0
+Active.Position = UDim2.new(0.204355359, 0, 0.342619687, 0)
+Active.Size = UDim2.new(0, 141, 0, 63)
+Active.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+Active.Font = Enum.Font.Gotham
+Active.Text = "Active"
+Active.TextColor3 = Color3.fromRGB(0, 0, 0)
+Active.TextScaled = true
+Active.TextSize = 14.000
+Active.TextWrapped = true
+Active.MouseButton1Down:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/JNHHGaming/JN-HH-Gaming-Pro/main/JN%20HH%20Gaming%20Pro",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+end)
+
+-- Scripts:
+
+local function NGJY_fake_script() -- ScreenGui.Script 
+	local script = Instance.new('Script', ScreenGui)
+
+	Main = script.Parent.Main
+	Main.Draggable = true
+	Main.Active = true
+	Main.Selectable = true
+end
+coroutine.wrap(NGJY_fake_script)()
