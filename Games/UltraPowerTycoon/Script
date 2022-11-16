@@ -1,5 +1,3 @@
-if game.PlaceId == 8146731988 then
-
 local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 local Window = Library:CreateWindow("Ultra Power Tycoon")
 
@@ -309,12 +307,3 @@ game:GetService("UserInputService").JumpRequest:connect(function()
 	end
 end)
 end)
-
-else
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Game Not Supported!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 10;
-end
