@@ -1,5 +1,7 @@
 if game.PlaceId == 8146731988 then
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Games/UltraPowerTycoon/Script", true))()
+
 else
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
