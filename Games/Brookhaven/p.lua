@@ -1,5 +1,5 @@
 game:GetService("StarterGui"):SetCore("SendNotification",{
-Title = "!!Important Notification!!",
+Title = "Info",
 Text = "You'll need a lot of tools", 
  
  
