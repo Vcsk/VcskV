@@ -62,7 +62,8 @@ local Tab5 = Window:NewTab("Games", false)
 local Tab6 = Window:NewTab("Hubs", false)
 local Tab7 = Window:NewTab("Guis", false)
 local Tab8 = Window:NewTab("Admins", false)
-local Tab9 = Window:NewTab("Credits", false)
+local Tab9 = Window:NewTab("Tools", false)
+local Tab10 = Window:NewTab("Credits", false)
 
 local Sec1 = Tab1:NewSection(plrname)
 local Sec2 = Tab2:NewSection("Player")
@@ -72,7 +73,8 @@ local Sec5 = Tab5:NewSection("Bedwars")
 local Sec6 = Tab6:NewSection("Hubs")
 local Sec7 = Tab7:NewSection("Guis")
 local Sec8 = Tab8:NewSection("Admins")
-local Sec9 = Tab9:NewSection("Credits to the Owner of Scripts")
+local Sec9 = Tab9:NewSection("Tools")
+local Sec10 = Tab10:NewSection("Credits to the Owner of Scripts")
 
 Sec1:NewButton("Click Me!", "Nothing", function()
     print(plrname, plrid)
@@ -195,6 +197,29 @@ Sec5:NewButton("Darkrai X","Credits - GamingScripter", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Doors"))()
 end)
 
+Sec5:NewLabel("Dahood")
+
+Sec5:NewButton("SwagModeV2","Credits to the Owner", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()
+end)
+
+Sec5:NewButton("NukerMode","Credits to the Owner", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Allvideo/test/main/Whitelist.txt"))()
+end)
+
+Sec5:NewLabel("Bloxfruit")
+
+Sec5:NewButton("ThunderZ","Credits to the Owner", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/StringV2/StringHub/main/BF.txt", true))()
+end)
+
+Sec5:NewLabel("PrisonLife")
+
+Sec5:NewButton("SeptexAdmin","Credits to the Owner", function()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife"),true))()
+end)
+
+
 Sec6:NewButton("Hat Hub","No Info", function()
 loadstring(game:HttpGet("https://textbin.net/raw/rvohv1nvuf"))();
 game:GetService("StarterGui"):SetCore("SendNotification",{
@@ -297,14 +322,41 @@ Sec8:NewButton("Fates Admin","Fe", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
 end)
 
-Sec8:NewButton("IV AdminV2","Fe",function()
+Sec8:NewButton("IV AdminV2","Fe", function()
 loadstring(game:HttpGet('\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\79\109\110\105\112\111\116\101\110\99\101\68\101\118\101\108\111\112\101\114\47\78\117\109\98\101\114\47\109\97\105\110\47\49\46\108\117\97'))()
 end)
 
-Sec8:NewButton("Reviz Admin","Fe",function()
+Sec8:NewButton("Reviz Admin","Fe", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/Caniwq2N",true))()
 end)
 
-Sec9:NewLabel("Vcsk0")
+Sec9:NewButton("Super Tools","Tools", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/sQWeMuB0'))()
+game:GetService("StarterGui"):SetCore("SendNotification",{
+    Title = "Notification",
+    Text = "Executed!",
+	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+Duration = 2;
+end)
 
-Sec9:NewLabel("GamingScripter")
+Sec9:NewButton("F3X","Not FE", function()
+loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Notification",
+	Text = "Executed!",
+	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+Duration = 2;
+end)
+
+Sec9:NewButton("Telekinesis","FE", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/b/main/Test"))()
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Notification",
+	Text = "Executed!",
+	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+Duration = 2;
+end)
+
+Sec9:NewButton("Invisible Tools","invisible", function()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/skid123skidlol/cd0d2dce51b3f20ad1aac941da06a1a1/raw/f58b98cce7d51e53ade94e7bb460e4f24fb7e0ff/%257BFE%257D%2520Invisible%2520Tool%2520(can%2520hold%2520tools)",true))()
+end)
