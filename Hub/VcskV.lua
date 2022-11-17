@@ -11,7 +11,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 Duration = 10;
 end
 
-if game.PlaceId == 0 then
+if game.PlaceId == 286090429 then
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Games/Arsenal/OPArsenal", true))()
 
