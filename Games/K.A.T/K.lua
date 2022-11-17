@@ -21,7 +21,7 @@ Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
 Duration = 2;
 end)
 
-s1:Button("Hitbox", function()
+s1:CreateButton("Hitbox", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Scripts/Hitbox.lua", true))()
 game:GetService("StarterGui"):SetCore("SendNotification",{
 Title = "Notification",
