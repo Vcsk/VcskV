@@ -274,6 +274,10 @@ s2:Button("Disable All Lasers", function()
     disableLasers()
 end)
 
+s2:Button("Hitbox", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Scripts/Hitbox.lua", true))()
+end)
+
 spoofEssentials()
 s3:Box("WalkSpeed","number", function(v)
     player.Character.Humanoid.WalkSpeed = v
