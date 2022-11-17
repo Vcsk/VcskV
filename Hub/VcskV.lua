@@ -14,5 +14,3 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
 Duration = 10;
 end
-
-
