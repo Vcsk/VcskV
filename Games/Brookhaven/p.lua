@@ -96,7 +96,7 @@ game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
 wait(1)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("fuck you", "ALL")
 wait(1)
-game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("i love raping cute girl", "ALL")
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("i love raping cute little girls", "ALL")
 wait(1)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("bitch ass", "ALL")
 wait(1)
