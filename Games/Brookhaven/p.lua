@@ -14,6 +14,7 @@ local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloo
 local Window = Library:CreateWindow("Brookhaven")
 
 local s1 = Window:CreateFolder("Main")
+local s2 = Window:CreateFolder("How to get ban")
 
 s1:Button("Bring All", function()
 
@@ -83,5 +84,21 @@ game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
 wait(0.10)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("YOU CAN'T STOP ME! THERES NOTHING YOU CAN DO!", "ALL")
 wait(0.6)
+   end
+end)
+
+s2:Button("Click to get ban", function()
+while true do
+wait(0.6)
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("i love eating children", "ALL")
+wait(1)
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("nigga", "ALL")
+wait(1)
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("fuck you", "ALL")
+wait(1)
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("i love raping cute girl", "ALL")
+wait(1)
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("bitch ass", "ALL")
+wait(1)
    end
 end)
