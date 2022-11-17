@@ -14,7 +14,7 @@ elseif game.PlaceId == 4924922222 then
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Games/Brookhaven/p.lua", true))()
 
-elseif game.PlaceId == 0 then
+elseif game.PlaceId == 621129760 then
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Games/K.A.T/K.lua", true))()
 
