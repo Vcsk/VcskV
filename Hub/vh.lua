@@ -144,8 +144,12 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 Duration = 2;
 end)
 
-Sec3:NewButton("Keyboard","Mobile Keyboard", function()
+Sec3:NewButton("Keyboard","Credits to the Owner", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+end)
+
+Sec3:NewButton("Keyboard(2)","Credits to the Owner", function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/SxgKjiRT'),true))()
 end)
 
 Sec3:NewButton("Netless","No Info", function()
