@@ -1,5 +1,5 @@
-local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
-local Window = Library:CreateWindow("Ultra Power Tycoon")
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local Window = Library:NewWindow("Ultra Power Tycoon")
 
 local player = game.Players.LocalPlayer
 
@@ -223,17 +223,18 @@ getgenv().auto_buy = false
 
 --
 
-local s1 = Window:CreateFolder("Main")
-local s2 = Window:CreateFolder("Misc")
-local s3 = Window:CreateFolder("LocalPlayer")
+local s1 = Window:NewSection("Main")
+local s2 = Window:NewSection("Misc")
+local s3 = Window:NewSection("Player")
+local s4 = Window:NewSection("Others")
 
-s1:Button("Get All Weapons", function()
+s1:CreateButton("Get All Weapons", function()
     claimAllWeapons()
 end)
 
 local c1
 local c12
-s1:Toggle("Auto Collect", function(s)
+s1:CreateToggle("Auto Collect", function(s)
     if s then
 getgenv().auto_collect = true
         c1, c12 = autoCollect()
@@ -254,7 +255,7 @@ getgenv().auto_collect = true
 end)
 
 local c2
-s1:Toggle("Auto Buy", function(s)
+s1:CreateToggle("Auto Buy", function(s)
 if s then
 getgenv().auto_buy = true
         c2 = autoBuy()
@@ -268,46 +269,36 @@ getgenv().auto_buy = true
     
 end)
 
-s1:DestroyGui()
-
-s2:Button("Disable All Lasers", function()
+s2:CreateButton("Disable All Lasers", function()
     disableLasers()
 end)
 
-s2:Button("Hitbox", function()
+s2:CreateButton("Hitbox", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Scripts/Hitbox.lua", true))()
 end)
 
 spoofEssentials()
-s3:Box("WalkSpeed","number", function(v)
+s3:CreateTextbox("WalkSpeed", function(v)
     player.Character.Humanoid.WalkSpeed = v
 end)
 
-s3:Box("JumpPower","number", function(v)
+s3:CreateTextbox("JumpPower", function(v)
      player.Character.Humanoid.JumpPower = v
 end)
 
-s3:Toggle("Noclip","string", function(s)
-if s then
-while true do
-	game:GetService("RunService").Stepped:wait()
-	game.Players.LocalPlayer.Character.Head.CanCollide = false
-	game.Players.LocalPlayer.Character.Torso.CanCollide = false
-end
-    else
-while true do
-	game:GetService("RunService").Stepped:wait()
-	game.Players.LocalPlayer.Character.Head.CanCollide = true
-	game.Players.LocalPlayer.Character.Torso.CanCollide = true
-end
-    end
+s3:CreateButton("Noclip(E)", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Scripts/Noclip.lua", true))()
 end)
 
-s3:Button("InfiniteJump", function()
+s3:CreateButton("InfiniteJump", function()
 local InfiniteJumpEnabled = true
 game:GetService("UserInputService").JumpRequest:connect(function()
 	if InfiniteJumpEnabled then
 		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
 	end
 end)
+end)
+
+s4:CreateButton("Keyboard", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
 end)
