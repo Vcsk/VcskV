@@ -6,6 +6,10 @@ elseif game.PlaceId == 286090429 then
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Games/Arsenal/OPArsenal", true))()
 
+elseif game.PlaceId == 0 then
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Games/Bedwars/OPBedwars", true))()
+
 else
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
