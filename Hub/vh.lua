@@ -15,7 +15,7 @@ wait(5)
 
 Notification:Notify(
     {Title = "Loaded!", Description = "Have Fun!"},
-    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 3, Type = "default"}
 )
 
 print("Loaded!");
