@@ -1,5 +1,7 @@
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 local Window = Library:NewWindow("Ultra Power Tycoon")
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))
 
 local player = game.Players.LocalPlayer
 
@@ -230,6 +232,11 @@ local s4 = Window:NewSection("Others")
 
 s1:CreateButton("Get All Weapons", function()
     claimAllWeapons()
+Notification:Notify(
+    {Title = "Notification", Description = "Successfully Get All Weapons!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 local c1
@@ -271,10 +278,20 @@ end)
 
 s2:CreateButton("Disable All Lasers", function()
     disableLasers()
+Notification:Notify(
+    {Title = "Notification", Description = "Successfully Disable All Lasers!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 s2:CreateButton("Hitbox", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Scripts/Hitbox.lua", true))()
+Notification:Notify(
+    {Title = "Notification", Description = "Executed Hitbox!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 spoofEssentials()
@@ -288,6 +305,11 @@ end)
 
 s3:CreateButton("Noclip(E)", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Scripts/Noclip.lua", true))()
+Notification:Notify(
+    {Title = "Notification", Description = "Executed Noclip(E)!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 s3:CreateButton("InfiniteJump", function()
