@@ -1079,12 +1079,11 @@ end)
 local KillingCheats = PhantomForcesWindow:NewSection("Misc")
 
 KillingCheats:CreateButton("Fps booster", function()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-Title = "Low quality has been executed lol",
-Text = "Epic", 
-
-Duration = 5
-})
+Notification:Notify(
+    {Title = "Notification", Description = "Executed Fps booster"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
 local g = game
 local w = g.Workspace
