@@ -1,3 +1,6 @@
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
+
 game:GetService("StarterGui"):SetCore("SendNotification",{
 Title = "Info",
 Text = "You'll need a lot of tools", 
