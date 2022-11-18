@@ -22,10 +22,10 @@ print("Loaded!");
 
 wait(0.5)
 
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Welcome",
-	Text = (plrname)})
-Duration = 5;
+Notification:Notify(
+    {Title = "Welcome", Description = (plrname)},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 3, Type = "default"}
+)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/UiLibrary/main/KavoMob"))()
 local Window = Library.CreateLib("Vcsk V | V1.02 | Public", "GrapeTheme")
