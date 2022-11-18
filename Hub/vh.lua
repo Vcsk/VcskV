@@ -129,24 +129,29 @@ end)
 
 Sec3:NewButton("Anti Fling","Anti fling", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/B2DCzPeD"))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-Title = "Notification",
-Text = "Executed!",
-Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec3:NewButton("Anti Attach","Remove Your Right Arm", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Scripts/Anti-Attach"))()
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec3:NewButton("Shiftlock For Mobile","Shiftlock", function()
 loadstring(game:HttpGet('https://pastebin.com/raw/WQ9NPeDS'))();
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec3:NewButton("Keyboard","Credits to the Owner", function()
@@ -162,17 +167,17 @@ loadstring(game:HttpGet("https://pastebin.com/raw/vf1d0baT"))()
 end)
 
 Sec4:NewButton("FE VR(Execute Netless First)","No Info", function()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Make Sure You Execute Netless",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2
+Notification:Notify(
+    {Title = "Notification", Description = "Make Sure You Execute Netless!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/Test-3/main/Test-3"))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec4:NewButton("FE Cat","No Info", function()
@@ -193,11 +198,11 @@ end)
 
 Sec5:NewButton("OP BEDWARS SCRIPT","Credits - 7GrandDad and Vcsk0", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/OPBedwars", true))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec5:NewLabel("Doors")
@@ -231,92 +236,92 @@ end)
 
 Sec6:NewButton("Hat Hub","No Info", function()
 loadstring(game:HttpGet("https://textbin.net/raw/rvohv1nvuf"))();
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec6:NewButton("HoHo Hub","No Info", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec6:NewButton("B_Genesis","No Info", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/raw-scriptpastebin/raw/main/B_Genesis'))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-    Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec6:NewButton("RedGhost Hub","No Info", function()
 loadstring(game:HttpGet('https://pastebin.com/raw/WFKSRG6m'))();
-game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec6:NewButton("BritishHubV6","No Info", function()
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/YourLocalNzi/Ye/main/BHob6"),true))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec6:NewButton("VHub","No Info", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SourceScript5315/sauce/main/VH-Launcher.lua"))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec6:NewButton("DarkX Hub","No Info", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/test-2/main/Test-2"))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec6:NewButton("DarkGhost Hub","No Info", function()
 loadstring(game:HttpGet('https://pastebin.com/raw/PY9SMdpY'))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec6:NewButton("DomainX Hub","No Info", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/DomainX/main/source',true))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec6:NewButton("FEBoomboxHub","No Info", function()
 loadstring(game:HttpGet('https://pastebin.com/raw/0QYXRcnm'))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec7:NewButton("RTX Gui | V3.1.1","Credits - ImPatrick", function()
@@ -341,29 +346,29 @@ end)
 
 Sec9:NewButton("Super Tools","Tools", function()
 loadstring(game:HttpGet('https://pastebin.com/raw/sQWeMuB0'))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "Notification",
-    Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec9:NewButton("F3X","Not FE", function()
 loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec9:NewButton("Telekinesis","FE", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/b/main/Test"))()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Notification",
-	Text = "Executed!",
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 2;
+Notification:Notify(
+    {Title = "Notification", Description = "Executed!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec9:NewButton("Invisible Tools","invisible", function()
