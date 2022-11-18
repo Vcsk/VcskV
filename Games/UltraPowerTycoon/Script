@@ -306,7 +306,7 @@ end)
 s3:CreateButton("Noclip(E)", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Scripts/Noclip.lua", true))()
 Notification:Notify(
-    {Title = "Notification", Description = "Executed Noclip(E)!"},
+    {Title = "Notification", Description = "Executed Noclip(E)! (Press e to turn on/off)"},
     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
     {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
 )
