@@ -1,14 +1,11 @@
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
 
-game:GetService("StarterGui"):SetCore("SendNotification",{
-Title = "Info",
-Text = "You'll need a lot of tools", 
- 
- 
-Button1 = "Ok",
-Duration = 30 
-})
+Notification:Notify(
+    {Title = "Notification", Description = "You'll need a lot of tools!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 
 local lp = game:FindService("Players").LocalPlayer
 
@@ -96,12 +93,12 @@ wait(0.6)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("i love eating children", "ALL")
 wait(1)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("nigga", "ALL")
-wait(1)
+wait(1.3)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("fuck you", "ALL")
-wait(1)
+wait(1.5)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("i love raping cute little girls", "ALL")
-wait(1)
+wait(1.7)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("bitch ass", "ALL")
-wait(1)
+wait(2)
    end
 end)
