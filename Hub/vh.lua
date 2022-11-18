@@ -1,22 +1,22 @@
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
 local plr = game.Players.LocalPlayer
 local plrname = plr.Name
 local plrid = plr.UserId
 
 print("Loading...")
 
-game:GetService("StarterGui"):SetCore("SendNotification",{
-    Title = "Loading...",
-	Text = "Please wait(5)",
-	Icon = "rbxassetid://8932511170"})
-Duration = 5;
+Notification:Notify(
+    {Title = "Loading", Description = "Please wait"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
+)
 
 wait(5)
 
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Loaded!",
-	Text = "Have Fun!",
-	Icon = "rbxassetid://0000000000"})
-Duration = 3;
+Notification:Notify(
+    {Title = "Loaded!", Description = "Have Fun!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
+)
 
 print("Loaded!");
 
@@ -78,6 +78,11 @@ local Sec10 = Tab10:NewSection("Credits to the Owner of Scripts")
 
 Sec1:NewButton("Click Me!", "Nothing", function()
     print(plrname, plrid)
+Notification:Notify(
+    {Title = "Notification", Description = "Clicked!"},
+    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
+    {Image = "http://www.roblox.com/asset/?id=6023426923", ImageColor = Color3.fromRGB(255, 84, 84)}
+)
 end)
 
 Sec1:NewKeybind("Toggle Keybind", "No Info", Enum.KeyCode.F, function()
