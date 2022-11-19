@@ -803,3 +803,202 @@ Windows.BackgroundColor3 = Color3.new(1, 1, 1)
 Windows.BackgroundTransparency = 1
 Windows.Position = UDim2.new(0, 20, 0, 20)
 Windows.Size = UDim2.new(1, 20, 1, -20)
+
+--// Scripts //--
+script.Parent = imgui
+
+local UIS = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local RS = game:GetService("RunService")
+local ps = game:GetService("Players")
+
+local p = ps.LocalPlayer
+local mouse = p:GetMouse()
+
+local Prefabs = script.Parent:WaitForChild("Prefabs")
+local Windows = script.Parent:FindFirstChild("Windows")
+
+local checks = {
+	["binding"] = false,
+}
+
+UIS.InputBegan:Connect(function(input, gameProcessed)
+	if input.KeyCode == ((typeof(ui_options.toggle_key) == "EnumItem") and ui_options.toggle_key or Enum.KeyCode.RightShift) then
+		if script.Parent then
+			if not checks.binding then
+				script.Parent.Enabled = not script.Parent.Enabled
+			end
+		end
+	end
+end)
+
+local function Resize(part, new, _delay)
+	_delay = _delay or 0.5
+	local tweenInfo = TweenInfo.new(_delay, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	local tween = TweenService:Create(part, tweenInfo, new)
+	tween:Play()
+end
+
+local function rgbtohsv(r, g, b) -- idk who made this function, but thanks
+	r, g, b = r / 255, g / 255, b / 255
+	local max, min = math.max(r, g, b), math.min(r, g, b)
+	local h, s, v
+	v = max
+
+	local d = max - min
+	if max == 0 then
+		s = 0
+	else
+		s = d / max
+	end
+
+	if max == min then
+		h = 0
+	else
+		if max == r then
+			h = (g - b) / d
+			if g < b then
+				h = h + 6
+			end
+		elseif max == g then
+			h = (b - r) / d + 2
+		elseif max == b then
+			h = (r - g) / d + 4
+		end
+		h = h / 6
+	end
+
+	return h, s, v
+end
+
+local function hasprop(object, prop)
+	local a, b = pcall(function()
+		return object[tostring(prop)]
+	end)
+	if a then
+		return b
+	end
+end
+
+local function gNameLen(obj)
+	return obj.TextBounds.X + 15
+end
+
+local function gMouse()
+	return Vector2.new(UIS:GetMouseLocation().X + 1, UIS:GetMouseLocation().Y - 35)
+end
+
+local function ripple(button, x, y)
+	spawn(function()
+		button.ClipsDescendants = true
+
+		local circle = Prefabs:FindFirstChild("Circle"):Clone()
+
+		circle.Parent = button
+		circle.ZIndex = 1000
+
+		local new_x = x - circle.AbsolutePosition.X
+		local new_y = y - circle.AbsolutePosition.Y
+		circle.Position = UDim2.new(0, new_x, 0, new_y)
+
+		local size = 0
+		if button.AbsoluteSize.X > button.AbsoluteSize.Y then
+			 size = button.AbsoluteSize.X * 1.5
+		elseif button.AbsoluteSize.X < button.AbsoluteSize.Y then
+			 size = button.AbsoluteSize.Y * 1.5
+		elseif button.AbsoluteSize.X == button.AbsoluteSize.Y then
+			size = button.AbsoluteSize.X * 1.5
+		end
+
+		circle:TweenSizeAndPosition(UDim2.new(0, size, 0, size), UDim2.new(0.5, -size / 2, 0.5, -size / 2), "Out", "Quad", 0.5, false, nil)
+		Resize(circle, {ImageTransparency = 1}, 0.5)
+
+		wait(0.5)
+		circle:Destroy()
+	end)
+end
+
+local windows = 0
+local library = {}
+
+local function format_windows()
+	local ull = Prefabs:FindFirstChild("UIListLayout"):Clone()
+	ull.Parent = Windows
+	local data = {}
+
+	for i,v in next, Windows:GetChildren() do
+		if not (v:IsA("UIListLayout")) then
+			data[v] = v.AbsolutePosition
+		end
+	end
+
+	ull:Destroy()
+
+	for i,v in next, data do
+		i.Position = UDim2.new(0, v.X, 0, v.Y)
+	end
+end
+
+function library:FormatWindows()
+	format_windows()
+end
+
+function library:AddWindow(title, options)
+	windows = windows + 1
+	local dropdown_open = false
+	title = tostring(title or "New Window")
+	options = (typeof(options) == "table") and options or ui_options
+	options.tween_time = 0.1
+
+	local Window = Prefabs:FindFirstChild("Window"):Clone()
+	Window.Parent = Windows
+	Window:FindFirstChild("Title").Text = title
+	Window.Size = UDim2.new(0, options.min_size.X, 0, options.min_size.Y)
+	Window.ZIndex = Window.ZIndex + (windows * 10)
+
+	do -- Altering Window Color
+		local Title = Window:FindFirstChild("Title")
+		local Bar = Window:FindFirstChild("Bar")
+		local Base = Bar:FindFirstChild("Base")
+		local Top = Bar:FindFirstChild("Top")
+		local SplitFrame = Window:FindFirstChild("TabSelection"):FindFirstChild("Frame")
+		local Toggle = Bar:FindFirstChild("Toggle")
+
+		spawn(function()
+			while true do
+				Bar.BackgroundColor3 = options.main_color
+				Base.BackgroundColor3 = options.main_color
+				Base.ImageColor3 = options.main_color
+				Top.ImageColor3 = options.main_color
+				SplitFrame.BackgroundColor3 = options.main_color
+
+				RS.Heartbeat:Wait()
+			end
+		end)
+
+	end
+
+	local Resizer = Window:WaitForChild("Resizer")
+
+	local window_data = {}
+	Window.Draggable = true
+
+	do -- Resize Window
+		local oldIcon = mouse.Icon
+		local Entered = false
+		Resizer.MouseEnter:Connect(function()
+			Window.Draggable = false
+			if options.can_resize then
+				oldIcon = mouse.Icon
+				-- mouse.Icon = "http://www.roblox.com/asset?id=4745131330"
+			end
+			Entered = true
+		end)
+
+		Resizer.MouseLeave:Connect(function()
+			Entered = false
+			if options.can_resize then
+				mouse.Icon = oldIcon
+			end
+			Window.Draggable = true
+		end)
