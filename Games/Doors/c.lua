@@ -1002,3 +1002,207 @@ function library:AddWindow(title, options)
 			end
 			Window.Draggable = true
 		end)
+
+		local Held = false
+		UIS.InputBegan:Connect(function(inputObject)
+			if inputObject.UserInputType == Enum.UserInputType.MouseButton1 then
+				Held = true
+
+				spawn(function() -- Loop check
+					if Entered and Resizer.Active and options.can_resize then
+						while Held and Resizer.Active do
+
+							local mouse_location = gMouse()
+							local x = mouse_location.X - Window.AbsolutePosition.X
+							local y = mouse_location.Y - Window.AbsolutePosition.Y
+
+							--
+							if x >= options.min_size.X and y >= options.min_size.Y then
+								Resize(Window, {Size = UDim2.new(0, x, 0, y)}, options.tween_time)
+							elseif x >= options.min_size.X then
+								Resize(Window, {Size = UDim2.new(0, x, 0, options.min_size.Y)}, options.tween_time)
+							elseif y >= options.min_size.Y then
+								Resize(Window, {Size = UDim2.new(0, options.min_size.X, 0, y)}, options.tween_time)
+							else
+								Resize(Window, {Size = UDim2.new(0, options.min_size.X, 0, options.min_size.Y)}, options.tween_time)
+							end
+
+							RS.Heartbeat:Wait()
+						end
+					end
+				end)
+			end
+		end)
+		UIS.InputEnded:Connect(function(inputObject)
+			if inputObject.UserInputType == Enum.UserInputType.MouseButton1 then
+				Held = false
+			end
+		end)
+	end
+
+	do -- [Open / Close] Window
+		local open_close = Window:FindFirstChild("Bar"):FindFirstChild("Toggle")
+		local open = true
+		local canopen = true
+
+		local oldwindowdata = {}
+		local oldy = Window.AbsoluteSize.Y
+		open_close.MouseButton1Click:Connect(function()
+			if canopen then
+				canopen = false
+
+				if open then
+					-- Close
+
+					oldwindowdata = {}
+					for i,v in next, Window:FindFirstChild("Tabs"):GetChildren() do
+						oldwindowdata[v] = v.Visible
+						v.Visible = false
+					end
+
+					Resizer.Active = false
+
+					oldy = Window.AbsoluteSize.Y
+					Resize(open_close, {Rotation = 0}, options.tween_time)
+					Resize(Window, {Size = UDim2.new(0, Window.AbsoluteSize.X, 0, 26)}, options.tween_time)
+					open_close.Parent:FindFirstChild("Base").Transparency = 1
+
+				else
+					-- Open
+
+					for i,v in next, oldwindowdata do
+						i.Visible = v
+					end
+
+					Resizer.Active = true
+
+					Resize(open_close, {Rotation = 90}, options.tween_time)
+					Resize(Window, {Size = UDim2.new(0, Window.AbsoluteSize.X, 0, oldy)}, options.tween_time)
+					open_close.Parent:FindFirstChild("Base").Transparency = 0
+
+				end
+
+				open = not open
+				wait(options.tween_time)
+				canopen = true
+
+			end
+		end)
+	end
+
+	do -- UI Elements
+		local tabs = Window:FindFirstChild("Tabs")
+		local tab_selection = Window:FindFirstChild("TabSelection")
+		local tab_buttons = tab_selection:FindFirstChild("TabButtons")
+
+		do -- Add Tab
+			function window_data:AddTab(tab_name)
+				local tab_data = {}
+				tab_name = tostring(tab_name or "New Tab")
+				tab_selection.Visible = true
+
+				local new_button = Prefabs:FindFirstChild("TabButton"):Clone()
+				new_button.Parent = tab_buttons
+				new_button.Text = tab_name
+				new_button.Size = UDim2.new(0, gNameLen(new_button), 0, 20)
+				new_button.ZIndex = new_button.ZIndex + (windows * 10)
+				new_button:GetChildren()[1].ZIndex = new_button:GetChildren()[1].ZIndex + (windows * 10)
+
+				local new_tab = Prefabs:FindFirstChild("Tab"):Clone()
+				new_tab.Parent = tabs
+				new_tab.ZIndex = new_tab.ZIndex + (windows * 10)
+
+				local function show()
+					if dropdown_open then return end
+					for i, v in next, tab_buttons:GetChildren() do
+						if not (v:IsA("UIListLayout")) then
+							v:GetChildren()[1].ImageColor3 = Color3.fromRGB(52, 53, 56)
+							Resize(v, {Size = UDim2.new(0, v.AbsoluteSize.X, 0, 20)}, options.tween_time)
+						end
+					end
+					for i, v in next, tabs:GetChildren() do
+						v.Visible = false
+					end
+
+					Resize(new_button, {Size = UDim2.new(0, new_button.AbsoluteSize.X, 0, 25)}, options.tween_time)
+					new_button:GetChildren()[1].ImageColor3 = Color3.fromRGB(73, 75, 79)
+					new_tab.Visible = true
+				end
+
+				new_button.MouseButton1Click:Connect(function()
+					show()
+				end)
+
+				function tab_data:Show()
+					show()
+				end
+
+				do -- Tab Elements
+
+					function tab_data:AddLabel(label_text) -- [Label]
+						label_text = tostring(label_text or "New Label")
+
+						local label = Prefabs:FindFirstChild("Label"):Clone()
+
+						label.Parent = new_tab
+						label.Text = label_text
+						label.Size = UDim2.new(0, gNameLen(label), 0, 20)
+						label.ZIndex = label.ZIndex + (windows * 10)
+
+						return label
+					end
+
+					function tab_data:AddButton(button_text, callback) -- [Button]
+						button_text = tostring(button_text or "New Button")
+						callback = typeof(callback) == "function" and callback or function()end
+
+						local button = Prefabs:FindFirstChild("Button"):Clone()
+
+						button.Parent = new_tab
+						button.Text = button_text
+						button.Size = UDim2.new(0, gNameLen(button), 0, 20)
+						button.ZIndex = button.ZIndex + (windows * 10)
+						button:GetChildren()[1].ZIndex = button:GetChildren()[1].ZIndex + (windows * 10)
+
+						spawn(function()
+							while true do
+								if button and button:GetChildren()[1] then
+									button:GetChildren()[1].ImageColor3 = options.main_color
+								end
+								RS.Heartbeat:Wait()
+							end
+						end)
+
+						button.MouseButton1Click:Connect(function()
+							ripple(button, mouse.X, mouse.Y)
+							pcall(callback)
+						end)
+
+						return button
+					end
+
+					function tab_data:AddSwitch(switch_text, callback) -- [Switch]
+						local switch_data = {}
+
+						switch_text = tostring(switch_text or "New Switch")
+						callback = typeof(callback) == "function" and callback or function()end
+
+						local switch = Prefabs:FindFirstChild("Switch"):Clone()
+
+						switch.Parent = new_tab
+						switch:FindFirstChild("Title").Text = switch_text
+
+						switch:FindFirstChild("Title").ZIndex = switch:FindFirstChild("Title").ZIndex + (windows * 10)
+						switch.ZIndex = switch.ZIndex + (windows * 10)
+						switch:GetChildren()[1].ZIndex = switch:GetChildren()[1].ZIndex + (windows * 10)
+
+						spawn(function()
+							while true do
+								if switch and switch:GetChildren()[1] then
+									switch:GetChildren()[1].ImageColor3 = options.main_color
+								end
+								RS.Heartbeat:Wait()
+							end
+						end)
+
+						local toggled = false
