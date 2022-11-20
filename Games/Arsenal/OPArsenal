@@ -1,11 +1,11 @@
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
-local PhantomForcesWindow = Library:NewWindow("Arsenal")
+local Window = Library:NewWindow("Arsenal")
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
 
-local KillingCheats = PhantomForcesWindow:NewSection("Combat")
+local s1 = Window:NewSection("Combat")
 
-KillingCheats:CreateButton("Silent Aim", function()
+s1:CreateButton("Silent Aim", function()
 Notification:Notify(
     {Title = "Notification", Description = "Executed Silent Aim!"},
     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
