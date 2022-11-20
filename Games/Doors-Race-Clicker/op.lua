@@ -37,10 +37,10 @@ end
 local s1 = Window:NewSection("Main")
 
 s1:CreateTextbox("FE Speed Changer", function(v)
-local ohInstance1 = game:GetService("Players").LocalPlayer.leaderstats[utf8.char(9889, 32, 83, 112, 101, 101, 100)]
-local ohNumber2 = (v)
+local a = game:GetService("Players").LocalPlayer.leaderstats[utf8.char(9889, 32, 83, 112, 101, 101, 100)]
+local b = (v)
 
-game:GetService("ReplicatedStorage").changeValue:FireServer(ohInstance1, ohNumber2)
+game:GetService("ReplicatedStorage").changeValue:FireServer(a, b)
 end)
 
 s1:CreateToggle("AutoClick", function(v)
