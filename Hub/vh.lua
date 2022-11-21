@@ -108,7 +108,7 @@ Sec2:NewTextBox("Fov","Change Field Of View", function(v)
 end)
 
 Sec2:NewToggle("Noclip","can go through wall", function(s)
-_G.Noclip = (v and true or false)
+_G.Noclip = (s and true or false)
 while _G.Noclip == true do
         game:GetService("RunService").Stepped:wait()
 	game.Players.LocalPlayer.Character.Head.CanCollide = false
