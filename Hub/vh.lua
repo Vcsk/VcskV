@@ -185,6 +185,10 @@ Sec4:NewButton("FE Baller V2","Hat : Red Stickman Head//Credits - scriptifer#951
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Lowerrated/roblox-fe-baller-script/main/main"))()
 end)
 
+Sec4:NewButton("FE Snake","No Hats Needed!", function()
+loadstring(game:HttpGet(('https://pastefy.ga/tWBTcE4R/raw'),true))()
+end)
+
 Sec4:NewButton("FakeLag","FE", function()
 loadstring(game:HttpGet('https://pastebin.com/raw/VM3b0Thg'))()
 end)
