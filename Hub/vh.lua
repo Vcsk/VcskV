@@ -65,7 +65,7 @@ local Tab8 = Window:NewTab("Admins", false)
 local Tab9 = Window:NewTab("Tools", false)
 local Tab10 = Window:NewTab("Credits", false)
 
-local Sec1 = Tab1:NewSection(plrname)
+local Sec1 = Tab1:NewSection("Welcome, " ..plrname)
 local Sec2 = Tab2:NewSection("Player")
 local Sec3 = Tab3:NewSection("Scripts")
 local Sec4 = Tab4:NewSection("FE")
