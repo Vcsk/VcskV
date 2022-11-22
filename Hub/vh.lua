@@ -155,6 +155,10 @@ Sec3:NewButton("Keyboard(2)","Credits to the Owner", function()
 loadstring(game:HttpGet(('https://pastebin.com/raw/SxgKjiRT'),true))()
 end)
 
+Sec3:NewButton("RemoteSpy","Credits to the Owner", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/harisprofanny/d/main/Protected.lua%20(22).txt"))()
+end)
+
 Sec3:NewButton("Netless","No Info", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/vf1d0baT"))()
 end)
