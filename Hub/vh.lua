@@ -77,7 +77,7 @@ local Sec9 = Tab9:NewSection("Tools")
 local Sec10 = Tab10:NewSection("Credits to the Owner of Scripts")
 
 Sec1:NewButton("Click Me!", "Nothing", function()
-    print(plrname, plrid)
+    print("Clicked! User: " ..plrname.. " | " ..plrid)
 Notification:Notify(
     {Title = "Notification", Description = "Clicked!"},
     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 2, Type = "image"},
