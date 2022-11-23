@@ -1,5 +1,5 @@
 # VCSK0
 
-I'am a scripter
+I'm a scripter
 
 Currently learning lua
