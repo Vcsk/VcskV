@@ -116,8 +116,13 @@ while _G.Noclip == true do
 end
 end)
 
-Sec2:NewButton("Inf Jump","Infinite Jump", function()
-loadstring(game:HttpGet("https://pastebin.com/raw/bC97eAyR", true))()
+Sec2:NewToggle("Infinite Jump","Infinite Jump", function(s)
+_G.InfJ = (s and true or false)
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if _G.InfJ == true then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
 end)
 
 Sec3:NewButton("Anti Fling","Anti fling", function()
