@@ -1,4 +1,4 @@
---// KavoUi Toggle Button Made By Vcsk0 --\\
+--// KavoUi Toggle Button Made By Vcsk0 \\--
 
 local ScreenGui = Instance.new("ScreenGui")
 local Button = Instance.new("TextButton")
