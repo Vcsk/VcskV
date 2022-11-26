@@ -17,9 +17,9 @@ Button.Text = "Toggle"
 Button.TextColor3 = Color3.fromRGB(40, 40, 40)
 Button.TextSize = 30.000
 Button.TextWrapped = true
-Button.Draggable = true
-Button.Selectable = true
-Button.Active = true
+Button.Draggable = true -- set this false to make it not draggable
+Button.Selectable = true -- set this false to make it not draggable
+Button.Active = true -- set this false to make it not draggable
 Button.MouseButton1Down:Connect(function()
 	Library:ToggleUI()
 end)
