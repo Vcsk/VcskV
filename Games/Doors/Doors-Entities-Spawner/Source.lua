@@ -20,7 +20,7 @@ local WorldToViewportPoint = Camera.WorldToViewportPoint
 
 local SelfModules = {
     DefaultConfig = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Games/Doors/Doors-Entities-Spawner/DefaultConfig.lua"))(),
-    Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))(),
+    Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Games/Doors/Doors-Entities-Spawner/Functions.lua"))(),
 }
 local ModuleScripts = {
     ModuleEvents = require(ReSt.ClientModules.Module_Events),
