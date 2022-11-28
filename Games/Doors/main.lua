@@ -11,14 +11,14 @@ print("Loading...")
 
 Notification:Notify(
     {Title = "Loading", Description = "Please wait"},
-    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
+    {OutlineColor = Color3.fromRGB(98, 37, 209),Time = 5, Type = "default"}
 )
 
 wait(5)
 
 Notification:Notify(
     {Title = "Loaded!", Description = "Have Fun!"},
-    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 3, Type = "default"}
+    {OutlineColor = Color3.fromRGB(98, 37, 209),Time = 3, Type = "default"}
 )
 
 print("Loaded!");
@@ -27,7 +27,7 @@ wait(0.5)
 
 Notification:Notify(
     {Title = "Welcome", Description = (plrname)},
-    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 3, Type = "default"}
+    {OutlineColor = Color3.fromRGB(98, 37, 209),Time = 3, Type = "default"}
 )
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/UiLibrary/main/KavoMob"))()
@@ -212,7 +212,7 @@ _G.IE = (s and true or false)
             if 0 < n and n < 4 then
                 Notification:Notify(
     {Title = "Warning!", Description = "Event in " .. tostring(n) .. " rooms"},
-    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
+    {OutlineColor = Color3.fromRGB(98, 37, 209),Time = 5, Type = "default"}
 )
             end
         end
@@ -222,13 +222,13 @@ workspace.ChildAdded:Connect(function(inst)
 if inst.Name == "RushMoving" and _G.IE == true then
 Notification:Notify(
     {Title = "Warning!", Description = "Rush has spawned, hide!"},
-    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
+    {OutlineColor = Color3.fromRGB(98, 37, 209),Time = 5, Type = "default"}
 )
 
 elseif inst.Name == "AmbushMoving" and _G.IE == true then
 Notification:Notify(
     {Title = "Warning!", Description = "Ambush has spawned, hide!"},
-    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
+    {OutlineColor = Color3.fromRGB(98, 37, 209),Time = 5, Type = "default"}
 )
 
 end
@@ -241,7 +241,7 @@ workspace.ChildAdded:Connect(function(inst)
 if inst.Name == "RushMoving" and _G.Avoid == true then
 Notification:Notify(
     {Title = "Warning!", Description = "Avoiding Rush. Please wait."},
-    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
+    {OutlineColor = Color3.fromRGB(98, 37, 209),Time = 5, Type = "default"}
 )
 
 local OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
@@ -256,7 +256,7 @@ game.Players.LocalPlayer.Character:MoveTo(OldPos)
 elseif inst.Name == "AmbushMoving" and _G.Avoid == true then
 Notification:Notify(
     {Title = "Warning!", Description = "Avoiding Ambush. Please wait."},
-    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "default"}
+    {OutlineColor = Color3.fromRGB(98, 37, 209),Time = 5, Type = "default"}
 )
 
 local OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
