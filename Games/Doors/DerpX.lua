@@ -54,7 +54,7 @@ pcl.Range = 90
 pcl.Parent = game.Players.LocalPlayer.Character.Head
 pcl.Enabled = false
 
-s2:Dropdown("Select Speed", {"25", "35", "50"}, function(v)
+s2:Dropdown("Speed", {"25", "35", "50"}, function(v)
     Select = v
 end)
 
