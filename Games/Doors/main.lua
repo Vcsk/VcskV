@@ -31,7 +31,7 @@ Notification:Notify(
 )
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/UiLibrary/main/KavoMob"))()
-local Window = Library.CreateLib("DOORS 👁️ | V1.00", "Ocean")
+local Window = Library.CreateLib("Derp X | DOORS 👁️ | V1.00", "Ocean")
 
 local ScreenGui = Instance.new("ScreenGui")
 local Button = Instance.new("TextButton")
