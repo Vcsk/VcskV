@@ -84,7 +84,7 @@ s2:NewToggle("Enable Speed","Speed", function(v)
 _G.EnableSpeed = (v and true or false)
 while _G.EnableSpeed == true do wait()
     pcall(function()
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Select
+    plr.Character.Humanoid.WalkSpeed = Select
     end)
  end
 end)
@@ -391,6 +391,39 @@ for i,v in ipairs(workspace:GetDescendants()) do
     end
 end
 coroutine.resume(KeyCoroutine)
+end)
+
+s3:NewToggle("Players ESP","No Info", function(s)
+_G.plrESP = (s and true or false)
+while _G.plrESP == true do wait()
+    pcall(function()
+       for i,v in pairs(game.Players:GetChildren()) do
+            if not v.Character.Head:FindFirstChild("ESP") then
+                local BillboardGui = Instance.new("BillboardGui")
+                local TextLabel = Instance.new("TextLabel")
+                BillboardGui.Parent = v.Character.Head
+                BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                BillboardGui.Active = true
+                BillboardGui.Name = "ESP"
+                BillboardGui.AlwaysOnTop = true
+                BillboardGui.LightInfluence = 1.000
+                BillboardGui.Size = UDim2.new(0, 50, 0, 50)
+                BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+                TextLabel.Parent = BillboardGui
+                TextLabel.BackgroundColor3 = Color3.fromRGB(102, 255, 153)
+                TextLabel.BackgroundTransparency = 1.000
+                TextLabel.Size = UDim2.new(0, 50, 0, 50)
+                TextLabel.Font = Enum.Font.GothamBold
+                TextLabel.Text = v.Name
+                TextLabel.TextColor3 = Color3.fromRGB(102, 255, 153)
+                TextLabel.TextScaled = true
+                TextLabel.TextSize = 14.000
+                TextLabel.TextStrokeTransparency = 0.000
+                TextLabel.TextWrapped = true
+            end
+        end
+    end)
+end
 end)
 
 s4:NewButton("Crucifix","No Info", function()
