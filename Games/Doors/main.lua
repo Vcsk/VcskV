@@ -362,8 +362,7 @@ s2:NewButton("Skip level 50","No Info", function()
   	end    
 )
 
-s3:NewButton("Key Chams(Not Working)","No Info", function(s)
-_G.Chams = (s and true or false)
+s3:NewToggle("Key Chams(Not Working)","No Info", function(s)
 local function ApplyKeyChams(inst)
     wait()
     local Cham = Instance.new("Highlight")
@@ -373,7 +372,7 @@ local function ApplyKeyChams(inst)
     Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
     Cham.Parent = game:GetService("CoreGui")
     Cham.Adornee = inst
-    Cham.Enabled = _G.Chams
+    Cham.Enabled = s.Value
     Cham.RobloxLocked = true
     return Cham
 end
