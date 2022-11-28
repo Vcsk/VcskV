@@ -666,6 +666,11 @@ do local v0=tonumber;local v1=string.byte;local v2=string.char;local v3=string.s
 end)
 
 local s5 = win:Tab("Credits")
+s5:Label("Credits : RED_KING$3808")
+s5:Button("Copy Youtube", function()
+   setclipboard("https://youtube.com/@kinghub7885")
+   UILib:Notification("Notification", "Copied!", "Okay")
+end)
 s5:Label("Discord : !vcsk0#1516")
 s5:Button("Copy Youtube", function()
    setclipboard("https://www.youtube.com/@vcsk0")
