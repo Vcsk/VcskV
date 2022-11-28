@@ -7,6 +7,14 @@ local plr = game.Players.LocalPlayer
 local plrname = plr.Name
 local plrid = plr.UserId
 
+local colors = {
+    SchemeColor = Color3.fromRGB(98, 37, 209),
+    Background = Color3.fromRGB(0, 0, 0),
+    Header = Color3.fromRGB(22, 29, 50),
+    TextColor = Color3.fromRGB(255,255,255),
+    ElementColor = Color3.fromRGB(20, 20, 20)
+}
+
 print("Loading...")
 
 Notification:Notify(
@@ -31,7 +39,7 @@ Notification:Notify(
 )
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/UiLibrary/main/KavoMob"))()
-local Window = Library.CreateLib("Derp X | DOORS 👁️ | V1.00", "Ocean")
+local Window = Library.CreateLib("Derp X | DOORS 👁️ | V1.00", colors)
 
 local ScreenGui = Instance.new("ScreenGui")
 local Button = Instance.new("TextButton")
