@@ -36,8 +36,8 @@ local plr = game.Players.LocalPlayer
 local plrname = plr.Name
 local plrid = plr.UserId
 
-if game:GetService("CoreGui"):FindFirstChild("Derp X HUB") then
-   game:GetService("CoreGui"):FindFirstChild("Derp X HUB"):Destroy()
+if game:GetService("CoreGui"):FindFirstChild("Derp X") then
+   game:GetService("CoreGui"):FindFirstChild("Derp X"):Destroy()
 end
 local UILib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Vcsk/UiLibrary/main/DerpX.lua'))();
 local win = UILib:Window("Derp X | Doors | V1.00",Color3.fromRGB(102, 255, 153), Enum.KeyCode.RightControl)
